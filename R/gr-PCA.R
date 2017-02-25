@@ -227,6 +227,7 @@ plot.PCA <- function(x, fac, xax=1, yax=2,
                      #loadings
                      loadings=FALSE,
                      loadings.mult = 1,
+                     loadings.col = 'red',
                      #labelspoint
                      labelspoints=FALSE,
                      col.labelspoints=par("fg"),
