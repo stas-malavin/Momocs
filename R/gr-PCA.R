@@ -57,12 +57,13 @@
 #' @param chull.filled.alpha numeric alpha transparency
 #' @param density whether to add a 2d density kernel estimation (based on \link{kde2d})
 #' @param lev.density if yes, the number of levels to plot (through \link{image})
-#' @param contour whether to add contour lines based on 2d density kernel
-#' @param lev.contour if yes, the (approximate) number of lines to draw
+#' @param contour whether to add contour lines based on \link{kde2d}
+#' @param lev.contour if yes, the (approximate) number of lines to draw (see \link{kde2d})
 #' @param n.kde2d the number of bins for \link{kde2d}, ie the 'smoothness' of density kernel
 #' @param delaunay logical whether to add a delaunay 'mesh' between points
 #' @param loadings logical whether to add loadings for every variables
-#' @param loadings.mult scalar multiplication factor for loadings' arrows
+#' @param loadings.mult scalar multiplication factor for loadings' arrows. Default - 1
+#' @param loadings.col color for loadings' arrows. Default - red
 #' @param labelspoints if TRUE rownames are used as labels, a colname from $fac can also be passed
 #' @param col.labelspoints a color for these labels, otherwise inherited from fac
 #' @param cex.labelspoints a cex for these labels
@@ -390,7 +391,8 @@ plot.PCA <- function(x, fac, xax=1, yax=2,
            col=col.labelspoints, cex=cex.labelspoints)
     }
   }
-  if (loadings)   .loadings(PCA$rotation[, c(xax, yax)], d = loadings.mult)
+  if (loadings)   .loadings(PCA$rotation[, c(xax, yax)], d = loadings.mult,
+                    col = loadings.col)
   if (axisnames)  .axisnames(xax, yax, "PC")
   if (axisvar)    .axisvar(PCA$sdev, xax, yax)
   if (unit)       .unit(nb.grids)
