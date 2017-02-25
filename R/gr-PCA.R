@@ -388,7 +388,7 @@ plot.PCA <- function(x, fac, xax=1, yax=2,
            col=col.labelspoints, cex=cex.labelspoints)
     }
   }
-  if (loadings)   .loadings(PCA$rotation[, c(xax, yax)])
+  if (loadings)   .loadings(PCA$rotation[, c(xax, yax)], d = 2)
   if (axisnames)  .axisnames(xax, yax, "PC")
   if (axisvar)    .axisvar(PCA$sdev, xax, yax)
   if (unit)       .unit(nb.grids)
