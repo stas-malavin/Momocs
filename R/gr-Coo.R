@@ -273,6 +273,7 @@ stack2 <- function(Coo){
 #' specifying the dimensions of the panel
 #' @param cols A \code{vector} of colors for drawing the outlines.
 #' Either a single value or of length exactly equal to the number of coordinates.
+#' @param lwd line width (see \link{par})
 #' @param borders A \code{vector} of colors for drawing the borders.
 #' Either a single value or of length exactly equals to the number of coordinates.
 #' @param fac a factor within the $fac slot for colors
@@ -344,7 +345,7 @@ panel.Out <- function(x, dim, cols, borders, fac,
   }
 
   pos <- coo_listpanel(Coo$coo, dim=dim, cols = cols, borders = borders,
-                       poly = TRUE)
+                       poly = TRUE, lwd = lwd)
   if (!is.null(names)) {
     if (is.logical(names)) {
       text(pos[, 1], pos[, 2], labels = names(Coo), cex = cex.names)

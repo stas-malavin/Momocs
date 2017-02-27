@@ -1,7 +1,7 @@
 THINGS TO DISCUSS
 =================
 
-- Why separate function for everything?? So difficult to remember, looks odd.
+- Borrow some useful things from FactoMineR, vegan, etc. Remake graphics
 
 - StereoMorph, shiny, own digitizer for Momocs
 
@@ -12,6 +12,12 @@ THINGS TO DISCUSS
 
 Bugs
 ====
+
+`[`.Coo (etc.) drops class attribute
+------------------------------------
+
+mshapes doesn't work correctly on dfourier results
+--------------------------------------------------
 
 plotting functions (probably 'panel' or 'stack') alternate mar parameter
 ------------------------------------------------------------------------
@@ -132,7 +138,7 @@ mshapes
 FUSE
 ====
 
-Reduce the number of fuctions, make sructure of the package more consistent:
+Reduce the number of fuctions, make structure of the package more consistent:
 coo_rotate and coo_rotatecenter
 coo_smooth and coo_smoothcurve
 many other such cases
@@ -142,8 +148,12 @@ all functions with x and y
 TODO
 ====
 
+add Value field everywhere (function description)
+
 plot.PCA: @param loadings.mult scalar multiplication factor for loadings' arrows
 make it automatic like in vegan
+add threshold for factor representation
+add possibility to represent factors (like in FactoMineR)
 
 add [ and [<- methods to Coo, Coe, and other objects
 
