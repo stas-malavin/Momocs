@@ -311,7 +311,7 @@ panel <- function(x, ...) {
 #' @export
 panel.Out <- function(x, dim, cols, borders, fac,
                       palette = col_summer, coo_sample=120, names = NULL, cex.names = 0.6, points = TRUE,
-                      points.pch = 3, points.cex = 0.2, points.col, ...) {
+                      points.pch = 3, points.cex = 0.2, points.col, lwd = 1, ...) {
   op <- par("mar", "oma")
   on.exit(par(op))
   par(mar = rep(0, 4), oma = rep(0.2, 4))
@@ -374,7 +374,7 @@ panel.OutCoe <- function(x, nb.pts=120, ...){
 #' @export
 panel.Opn <- function(x, cols, borders, fac,
                       palette = col_summer, coo_sample=120, names = NULL, cex.names = 0.6, points = TRUE,
-                      points.pch = 3, points.cex = 0.2, points.col, ...) {
+                      points.pch = 3, points.cex = 0.2, points.col, lwd = 1, ...) {
   op <- par("mar", "oma")
   on.exit(par(op))
   par(mar = rep(0, 4), oma = rep(0.2, 4))
@@ -408,7 +408,7 @@ panel.Opn <- function(x, cols, borders, fac,
     cols <- rep(borders[1], length(Coo))
   }
 
-  pos <- coo_listpanel(Coo$coo, cols = cols, borders = borders, poly = FALSE)
+  pos <- coo_listpanel(Coo$coo, cols = cols, borders = borders, lwd = lwd, poly = FALSE)
   if (!is.null(names)) {
     if (is.logical(names)) {
       text(pos[, 1], pos[, 2], labels = names(Coo), cex = cex.names)
