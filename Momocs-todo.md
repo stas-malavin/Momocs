@@ -13,6 +13,15 @@ THINGS TO DISCUSS
 Bugs
 ====
 
+LDA retain parameter (too much axes)
+------------------------------------
+> SM.lda <- SM.pca %>% LDA('SpSM', retain = 17)
+17 PC retained
+Error in PCA$x[, 1:retain] : subscript out of bounds
+
+PCcontrib closes open outlines
+------------------------------
+
 `[`.Coo (etc.) drops class attribute
 ------------------------------------
 
@@ -134,6 +143,7 @@ Typos
 - plot.PCA argument is called pos.shp in man, whereas it's pos.shapes really
 mshapes
 
+- LDA: Examples: bot.f$fac$plop <- factor(rep(letters[1:4], each=10)). Also braces in "Note" section.
 
 FUSE
 ====

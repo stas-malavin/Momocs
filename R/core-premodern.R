@@ -34,6 +34,10 @@ d.default <- function(x, id1, id2){
 
 #' @export
 d.Ldk <- function(x, id1, id2){
+  if ( is.character(id1) & is.character(id2) ) {
+    id1 <- match(id1, rownames(x))
+    id2 <- match(id2, rownames(x))
+  }
   sapply(x$coo, d, id1, id2)
 }
 
