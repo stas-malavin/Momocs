@@ -35,10 +35,16 @@ d.default <- function(x, id1, id2){
 #' @export
 d.Ldk <- function(x, id1, id2){
   if ( is.character(id1) & is.character(id2) ) {
-    id1 <- match(id1, rownames(x))
-    id2 <- match(id2, rownames(x))
+    result <- vector('list', length(x))
+    for ( i in 1:length(x$coo) ) {
+      id1 <- match(id1, rownames(x$coo[[i]]))
+      id2 <- match(id2, rownames(x$coo[[i]]))
+      result[i] <- d(x$coo[[i]], id1, id2)
+    })
+  } else {
+    result <- sapply(x$coo, d, id1, id2)
   }
-  sapply(x$coo, d, id1, id2)
+  return(result)
 }
 
 #' @export

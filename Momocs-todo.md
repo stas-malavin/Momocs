@@ -13,6 +13,12 @@ THINGS TO DISCUSS
 Bugs
 ====
 
+plot.PCA on Ldk PCA doesn't work
+--------------------------------
+> w.al <- fgProcrustes(wings)
+> plot(PCA(w.al))
+Error in rep(col.ind, nrow(coord.actif)) : invalid 'times' argument
+
 LDA retain parameter (too much axes)
 ------------------------------------
 > SM.lda <- SM.pca %>% LDA('SpSM', retain = 17)
