@@ -40,7 +40,7 @@ d.Ldk <- function(x, id1, id2){
       id1 <- match(id1, rownames(x$coo[[i]]))
       id2 <- match(id2, rownames(x$coo[[i]]))
       result[i] <- d(x$coo[[i]], id1, id2)
-    })
+    }
   } else {
     result <- sapply(x$coo, d, id1, id2)
   }
